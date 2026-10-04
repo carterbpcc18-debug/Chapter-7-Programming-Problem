@@ -1,16 +1,18 @@
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        Dragon dragon = new Dragon("Ember", 9);
-        Spirit spirit = new Spirit("Whisper", 6);
+        ArrayList<Creature> roster = new ArrayList<>();
 
-        System.out.println("Dragon Name: " + dragon.getName());
-        System.out.println("Dragon Threat Level: " + dragon.getThreatLevel());
-        dragon.react();
+        roster.add(new Dragon("Ember", 9));
+        roster.add(new Spirit("Whisper", 6));
+        roster.add(new Golem("Boulder", 7));
 
-        System.out.println();
-
-        System.out.println("Spirit Name: " + spirit.getName());
-        System.out.println("Spirit Threat Level: " + spirit.getThreatLevel());
-        spirit.react();
+        for (Creature creature : roster) {
+            System.out.println("Name: " + creature.getName());
+            System.out.println("Threat Level: " + creature.getThreatLevel());
+            creature.react();
+            System.out.println();
+        }
     }
 }
