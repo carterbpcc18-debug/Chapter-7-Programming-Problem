@@ -11,3 +11,7 @@ A Dragon has an "IS-A" relationship with Creature because a Dragon is a type of 
 ## Phase 3
 
 Polymorphism allows me to store different types of creatures in the same collection because Dragon, Spirit, and Golem are all subclasses of Creature. I can use a Creature reference when looping through the roster, and Java will still call the correct overridden `react()` method for each object. This means I don't need a separate loop for each creature type. If a new creature type were added later, as long as it extends Creature and provides its own `react()` method, it could be added to the roster without changing the looping code.
+
+## Phase 4
+
+An architect might mark a method as `final` when that method needs to behave the same way for every subclass. In this assignment, the containment verification protocol needs to be consistent for every creature, so subclasses should not be able to change it. Using `final` prevents another developer from accidentally or intentionally overriding the method and changing its behavior. This helps protect important rules in the program and makes the class hierarchy more predictable and reliable.

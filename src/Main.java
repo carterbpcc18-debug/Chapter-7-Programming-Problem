@@ -9,9 +9,8 @@ public class Main {
         roster.add(new Golem("Boulder", 7));
 
         for (Creature creature : roster) {
-            System.out.println("Name: " + creature.getName());
-            System.out.println("Threat Level: " + creature.getThreatLevel());
             creature.react();
+            creature.verifyContainment();
             System.out.println();
         }
     }
